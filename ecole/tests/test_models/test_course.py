@@ -3,9 +3,9 @@ Tests unitaires de la classe Course.
 Utilisation de mocker pour isoler les dépendances.
 """
 
-from ecole.models.course import Course
-from ecole.models.teacher import Teacher
-from ecole.models.student import Student
+from models.course import Course
+from models.teacher import Teacher
+from models.student import Student
 from datetime import date
 
 
@@ -34,17 +34,23 @@ def test_set_teacher():
     assert course in teacher.courses_teached
 
 
-def test_add_student():
+def test_add_student(mocker):
     """
     Vérifie l'ajout d'un étudiant avec mock.
     """
     course = Course("Math", date(2024, 1, 1), date(2024, 6, 1))
-    student = Student("Thomas", "André", 15)
+    # student = Student("Thomas", "André", 15)
+
+    # simulation d'un étudiant et de sa liste de cours
+    student = mocker.Mock()
+    student.courses_taken = []
 
     course.add_student(student)
 
     assert student in course.students_taking_it
+    assert len(student.courses_taken) == 1
     assert course in student.courses_taken
+    assert student.courses_taken.count(course) == 1
 
 
 def test_course_str_without_teacher():
