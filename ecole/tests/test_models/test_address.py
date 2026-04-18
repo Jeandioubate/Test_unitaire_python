@@ -2,7 +2,7 @@
 Tests unitaires de la classe Address.
 """
 
-from ecole.models.address import Address
+from models.address import Address
 
 
 def test_address_creation():
