@@ -2,8 +2,8 @@
 Tests unitaires de la classe Teacher.
 """
 
-from ecole.models.teacher import Teacher
-from ecole.models.course import Course
+from models.teacher import Teacher
+from models.course import Course
 from datetime import date
 
 
