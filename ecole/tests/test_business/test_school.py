@@ -10,11 +10,10 @@ Ces tests utilisent pytest et pytest-mock.
 """
 
 from datetime import date
-from ecole import models
-from ecole.business.school import School
-from ecole.models.course import Course
-from ecole.models.teacher import Teacher
-from ecole.models.student import Student
+from business.school import School
+from models.course import Course
+from models.teacher import Teacher
+from models.student import Student
 
 
 def test_school_creation():
@@ -127,6 +126,8 @@ def test_init_static_courses_have_teachers():
     school.init_static()
 
     for course in school.courses:
+        if course.teacher is None:
+            print("Bug !")
         assert course.teacher is not None
 
 
