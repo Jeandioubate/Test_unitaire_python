@@ -22,7 +22,7 @@ class Teacher(Person):
     def add_course(self, course: Course) -> None:
         """Ajout du cours course à la liste des cours qu'il enseigne."""
         #course.teacher = self
-        self.courses_teached.append(course)
+        course.set_teacher(self)
 
     def __str__(self) -> str:
         person_str = super().__str__()
