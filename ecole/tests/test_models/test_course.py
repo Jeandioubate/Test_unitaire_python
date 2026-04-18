@@ -20,13 +20,15 @@ def test_course_creation():
     assert course.students_taking_it == []
 
 
-def test_set_teacher():
+def test_set_teacher(mocker):
     """
     Vérifie l'affectation d'un enseignant
     """
     course = Course("Math", date(2024, 1, 1), date(2024, 6, 1))
-    teacher = Teacher("Sophie", "Dubois", 41, date(2012, 9, 1))
+    #teacher = Teacher("Sophie", "Dubois", 41, date(2012, 9, 1))
 
+    teacher = mocker.Mock()
+    teacher.courses_teached = []
 
     course.set_teacher(teacher)
 
