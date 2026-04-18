@@ -3,8 +3,8 @@ Tests unitaires de la classe abstraite Person.
 On utilise une classe concrète fictive pour tester.
 """
 
-from ecole.models.person import Person
-from ecole.models.address import Address
+from models.person import Person
+from models.address import Address
 
 
 class DummyPerson(Person):
