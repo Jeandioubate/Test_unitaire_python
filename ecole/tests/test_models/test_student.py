@@ -2,8 +2,8 @@
 Tests unitaires de la classe Student.
 """
 
-from ecole.models.student import Student
-from ecole.models.course import Course
+from models.student import Student
+from models.course import Course
 from datetime import date
 
 
