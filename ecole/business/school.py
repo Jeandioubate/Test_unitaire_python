@@ -7,10 +7,10 @@ Classe School
 from dataclasses import dataclass, field
 from datetime import date
 
-from ecole.models.address import Address
-from ecole.models.course import Course
-from ecole.models.teacher import Teacher
-from ecole.models.student import Student
+from models.address import Address
+from models.course import Course
+from models.teacher import Teacher
+from models.student import Student
 
 
 @dataclass
